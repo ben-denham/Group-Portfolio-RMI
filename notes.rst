@@ -19,6 +19,6 @@ Running steps
 
    javac *.java
    rmic myRemoteObject
-   start rmiregsitry
+   start rmiregistry
    start java myRemoteServer
    java myClient
