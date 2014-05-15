@@ -15,6 +15,11 @@ http://docs.oracle.com/javase/tutorial/rmi/
 * lookup - returns a stub or reference for the remote object with the specified name
 * rebind - rebinds the specified name to a new remote object
 
+Misc requirements
+-----------------
+
+* tennis.mdb must be registered at: "jdbc:odbc:tennis_access".
+
 Running steps
 -------------
 

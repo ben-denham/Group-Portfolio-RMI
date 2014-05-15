@@ -1,5 +1,6 @@
 import java.rmi.*;
+import java.util.Vector;
 
 interface PlayerDBIntf extends Remote {
-    public void world() throws RemoteException;
+    public Vector query(String query) throws RemoteException;
 }
