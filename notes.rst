@@ -11,6 +11,9 @@ http://docs.oracle.com/javase/tutorial/rmi/
   callable.
 * A server will store a remote object in the rmiregistry using Naming.rebind()
 * A client will find an object in the rmiregistry using Naming.lookup()
+* 2 remote objects exist in the program: PlayerApp and DBServer
+* lookup - returns a stub or reference for the remote object with the specified name
+* rebind - rebinds the specified name to a new remote object
 
 Running steps
 -------------
@@ -19,6 +22,6 @@ Running steps
 
    javac *.java
    rmic myRemoteObject
-   start rmiregsitry
+   start rmiregistry
    start java myRemoteServer
    java myClient
