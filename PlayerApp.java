@@ -7,12 +7,13 @@ class PlayerApp extends UnicastRemoteObject implements PlayerAppIntf {
 	super();
     }
 
-    public void hello() throws RemoteException {
-	System.out.println("hello");
+    public void get(int p) throws RemoteException {
 	try {
 	    Remote remote = Naming.lookup("rmi://127.0.0.1/PlayerDB");
 	    PlayerDBIntf playerApp = (PlayerDBIntf) remote;
 	    playerApp.query("");
+	    
+	    Player p = new Player();
 	}
 	catch (Exception ex) {
 	    System.out.println(ex);
