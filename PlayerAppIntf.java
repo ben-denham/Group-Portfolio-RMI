@@ -1,5 +1,5 @@
 import java.rmi.*;
 
 interface PlayerAppIntf extends Remote {
-    void hello() throws RemoteException;
+     public Player get(int p) throws RemoteException;
 }
