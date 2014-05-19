@@ -23,7 +23,6 @@ class Client extends JFrame
         {
             Remote remote = Naming.lookup("rmi://127.0.0.1/PlayerApp");
             PlayerAppIntf playerApp = (PlayerAppIntf) remote;
-            playerApp.hello();
             Client frame = new Client();
             frame.setVisible(true);
         }
@@ -67,7 +66,8 @@ class Client extends JFrame
                 {
                     Remote remote = Naming.lookup("rmi://127.0.0.1/PlayerApp");
                     PlayerAppIntf playerApp = (PlayerAppIntf) remote;
-                    playerApp.hello();
+                    int p = Integer.parseInt(txtPlayerNo.getText()); 
+                    playerApp.get(p);
                 }
                 catch (Exception ex)
                 {
