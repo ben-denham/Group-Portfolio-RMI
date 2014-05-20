@@ -17,23 +17,12 @@ class Client extends JFrame
     private JTextField txtTown;
     private JTextField txtPhoneNo;
     private JTextField txtLeague;
-    public static void main(String[] args)
-    {
-        try
-        {
-            Remote remote = Naming.lookup("rmi://127.0.0.1/PlayerApp");
-            PlayerAppIntf playerApp = (PlayerAppIntf) remote;
-            Client frame = new Client();
-            frame.setVisible(true);
-        }
-        catch (Exception ex)
-        {
-            System.out.println(ex);
-        }
+
+    public static void main(String[] args) {
+	Client frame = new Client();
     }
 
-    Client()
-    {
+    public Client() {
         setTitle("ClientGui");
         setBounds(100, 100, 248, 215);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,7 +56,9 @@ class Client extends JFrame
                     Remote remote = Naming.lookup("rmi://127.0.0.1/PlayerApp");
                     PlayerAppIntf playerApp = (PlayerAppIntf) remote;
                     int p = Integer.parseInt(txtPlayerNo.getText()); 
-                    playerApp.get(p);
+                    Player player = playerApp.get(p);
+		    txtName.setText(player.getName());
+		    txtTown.setText(player.getTown());
                 }
                 catch (Exception ex)
                 {
@@ -84,5 +75,7 @@ class Client extends JFrame
         getContentPane().add(lblTown);
         getContentPane().add(txtTown);
         getContentPane().add(btnGet);
+
+	setVisible(true);
     }
 }

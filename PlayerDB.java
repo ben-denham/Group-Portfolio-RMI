@@ -7,6 +7,12 @@ class PlayerDB extends UnicastRemoteObject implements PlayerDBIntf {
 
     public PlayerDB() throws RemoteException {
 	super();
+	try {
+	    Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+	}
+	catch (Exception e) {
+	    System.out.println(e);
+	}
     }
 
     public Vector query(String query) throws RemoteException {
