@@ -6,17 +6,8 @@ import javax.swing.*;
 class Client extends JFrame
 {
     private JTextField txtPlayerNo;
-    private JTextField txtName;
-    private JTextField txtInitials;
-    private JTextField txtBirthDate;
-    private JTextField txtSex;
-    private JTextField txtJoined;
-    private JTextField txtStreet;
-    private JTextField txtHouseNo;
-    private JTextField txtPostCode;
+    private JTextField txtName; 
     private JTextField txtTown;
-    private JTextField txtPhoneNo;
-    private JTextField txtLeague;
 
     public static void main(String[] args) {
 	Client frame = new Client();
@@ -74,6 +65,16 @@ class Client extends JFrame
         getContentPane().add(txtName);
         getContentPane().add(lblTown);
         getContentPane().add(txtTown);
+        
+        JButton btnClose = new JButton("Close");
+        btnClose.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		System.exit(0);
+        	}
+        });
+        btnClose.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        btnClose.setBounds(10, 142, 89, 23);
+        getContentPane().add(btnClose);
         getContentPane().add(btnGet);
 
 	setVisible(true);
